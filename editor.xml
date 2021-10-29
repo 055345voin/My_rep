@@ -1,0 +1,9 @@
+<application>
+  <component name="DaemonCodeAnalyzerSettings">
+    <option name="NEXT_ERROR_ACTION_GOES_TO_ERRORS_FIRST" value="false" />
+  </component>
+  <component name="TodoConfiguration">
+    <pattern pattern="\btodo\b.*" />
+    <pattern pattern="\bfixme\b.*" />
+  </component>
+</application>
