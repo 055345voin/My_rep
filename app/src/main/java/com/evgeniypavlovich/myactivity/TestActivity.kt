@@ -11,7 +11,5 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        val hello: String? = intent.extras?.getString(KEY)
-        Toast.makeText(this, hello, Toast.LENGTH_SHORT).show()
     }
 }
