@@ -1,69 +1,26 @@
 package com.evgeniypavlovich.myactivity
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
-private const val TAG = "MainActivity"
-private const val My_Own_Log_TAG = "MyOwnLog"
-var a = 0 // перебор ячеек массива
-
-fun poem() {
-    val linesOfAPoem = arrayOf(
-        "Ты видел деву на скале",
-        "В одежде белой над волнами",
-        "Когда, бушуя в бурной мгле,",
-        "Играло море с берегами,",
-        "Когда луч молний озарял",
-        "Ее всечасно блеском алым",
-        "И ветер бился и летал",
-        "С ее летучим покрывалом?",
-        "Прекрасно море в бурной мгле",
-        "И небо в блесках без лазури;",
-        "Но верь мне: дева на скале",
-        "Прекрасней волн, небес и бури."
-    )
-    val c = linesOfAPoem.size// c = длина массива
-    if (a < c) {
-        Log.d(My_Own_Log_TAG, linesOfAPoem[a])
-        a++
-    } else a=0// для зацикливания, что бы не выскакивала ошибка
-}
+private const val KEY = "HELLO_KEY"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        poem()
-    }
+        val nextButton: Button = findViewById(R.id.next_button)
 
-    override fun onStart() {
-        super.onStart()
-        poem()
-    }
+        val intent = Intent(this, TestActivity::class.java)
+        intent.putExtra(KEY, "Hello from MainActivity")
+        nextButton.setOnClickListener {
+            startActivity(intent)
+        }
 
-    override fun onResume() {
-        super.onResume()
-        poem()
-    }
 
-    override fun onPause() {
-        super.onPause()
-        poem()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        poem()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        poem()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        poem()
     }
 }
+
+
