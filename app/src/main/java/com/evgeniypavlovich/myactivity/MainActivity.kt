@@ -23,7 +23,6 @@ val massiveLinesOfPoem = arrayOf(
     "Прекрасней волн, небес и бури."
 )
 
-
 class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")// а вот это непонятно зачем
